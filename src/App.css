@@ -1,38 +1,98 @@
-.App {
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define custom variables for colors */
+:root {
+  --primary-color: #2196F3; /* Blue */
+  --secondary-color: #E91E63; /* Pink */
+  --text-color: #333;
+  --background-color: #F5F5F5;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.app {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: var(--primary-color);
+  font-size: 36px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search {
+  background: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.search input {
+  background: transparent;
   color: white;
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.search img {
+  cursor: pointer;
+  padding: 10px;
+  background: var(--secondary-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search img:hover {
+  background: #FF4081; /* Lighter pink on hover */
+}
+
+.empty h2 {
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  background: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.movie:hover {
+  box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.movie div:nth-of-type(1) {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.movie div:nth-of-type(3) {
+  background-color: var(--primary-color);
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
